@@ -1,4 +1,4 @@
-//! A `no_std` implementation of
+//! A Rust `no_std` implementation of
 //! [Go's `defer` statement](https://tour.golang.org/flowcontrol/12) as a macro,
 //! which executes a block of code when the surrounding scope ends.
 //!
@@ -10,6 +10,7 @@
 //! [dependencies]
 //! godefer = "1.0.0"
 //! ```
+
 #![no_std]
 
 #[doc(hidden)]
@@ -58,9 +59,9 @@ impl<F: FnOnce()> Drop for Defer<F> {
 /// }
 /// ```
 ///
-/// In Go, the `defer` code runs when the function exits. In Rust, the code runs
-/// when the surrounding scope ends – this makes it possible to use `defer`
-/// inside loops:
+/// In Go, the `defer` code runs when the function exits. In this Rust
+/// implementation, the code runs when the surrounding scope ends – this makes
+/// it possible to use `defer` inside loops:
 ///
 /// ```rust
 /// use godefer::defer;
