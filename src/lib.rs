@@ -1,6 +1,10 @@
-//! A Rust `no_std` implementation of
-//! [Go's `defer` statement](https://tour.golang.org/flowcontrol/12) as a macro,
-//! which executes a block of code when the surrounding scope ends.
+//! A Rust implementation of
+//! [Go's `defer` statement](https://tour.golang.org/flowcontrol/12) as the
+//! `defer!` macro, which executes a block of code when the surrounding scope
+//! ends.
+//!
+//! This is a high-performance `no_std` implementation, providing only the
+//! `defer!` macro.
 //!
 //! # Usage
 //!

@@ -2,7 +2,7 @@
 name = "defer-lite"
 version = "1.0.0"
 authors = ["Rodrigo Cesar de Freitas Dias <rcesar@gmail.com>"]
-description = "A lightweight implementation of Go's defer statement."
+description = "A high-performance implementation of Go's defer statement."
 categories = ["no-std", "rust-patterns"]
 keywords = ["defer", "deferred", "go"]
 license = "MIT"
