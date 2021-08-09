@@ -1,6 +1,8 @@
-# GoDefer
+# defer-lite
 
-A Rust `no_std` implementation of [Go's `defer` statement](https://tour.golang.org/flowcontrol/12), which executes a block of code when the surrounding scope ends.
+A Rust implementation of [Go's `defer` statement](https://tour.golang.org/flowcontrol/12) as the `defer!` macro, which executes a block of code when the surrounding scope ends.
+
+This crate is very minimal, being `no_std` and very lightweight.
 
 ## Usage
 
@@ -8,7 +10,7 @@ Add the dependency in your `Cargo.toml`:
 
 ```toml
 [dependencies]
-godefer = "1.0.0"
+defer-lite = "1.0.0"
 ```
 
 ## Examples
@@ -16,7 +18,7 @@ godefer = "1.0.0"
 Simplest example:
 
 ```rust
-use godefer::defer;
+use defer_lite::defer; // import the defer! macro
 
 fn main() {
     defer! { println!("Second"); }
@@ -27,7 +29,7 @@ fn main() {
 Multiple statements:
 
 ```rust
-use godefer::defer;
+use defer_lite::defer;
 
 fn main() {
     defer! {
@@ -41,7 +43,7 @@ fn main() {
 In Go, the `defer` code runs when the function exits. In this Rust implementation, the code runs when the surrounding scope ends – this makes it possible to use `defer` inside loops:
 
 ```rust
-use godefer::defer;
+use defer_lite::defer;
 
 fn main() {
     defer! { println!("End"); }

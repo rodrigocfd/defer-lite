@@ -8,7 +8,7 @@
 //!
 //! ```toml
 //! [dependencies]
-//! godefer = "1.0.0"
+//! defer-lite = "1.0.0"
 //! ```
 
 #![no_std]
@@ -37,7 +37,7 @@ impl<F: FnOnce()> Drop for Defer<F> {
 /// Simplest example:
 ///
 /// ```rust
-/// use godefer::defer;
+/// use defer_lite::defer; // import the defer! macro
 ///
 /// fn main() {
 ///     defer! { println!("Second"); }
@@ -48,7 +48,7 @@ impl<F: FnOnce()> Drop for Defer<F> {
 /// Multiple statements:
 ///
 /// ```rust
-/// use godefer::defer;
+/// use defer_lite::defer;
 ///
 /// fn main() {
 ///     defer! {
@@ -64,7 +64,7 @@ impl<F: FnOnce()> Drop for Defer<F> {
 /// it possible to use `defer` inside loops:
 ///
 /// ```rust
-/// use godefer::defer;
+/// use defer_lite::defer;
 ///
 /// fn main() {
 ///     defer! { println!("End"); }
@@ -81,6 +81,6 @@ impl<F: FnOnce()> Drop for Defer<F> {
 #[macro_export]
 macro_rules! defer {
 	( $($tt:tt)* ) => {
-		let _deferred = godefer::Defer::new(|| { $($tt)* });
+		let _deferred = defer_lite::Defer::new(|| { $($tt)* });
 	};
 }
