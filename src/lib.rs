@@ -3,8 +3,8 @@
 //! `defer!` macro, which executes a block of code when the surrounding scope
 //! ends.
 //!
-//! This is a high-performance `no_std` implementation, providing only the
-//! `defer!` macro.
+//! This crate focuses on providing a lightweight, high-performance, `no_std`
+//! implementation of the `defer!` macro.
 //!
 //! # Usage
 //!
@@ -64,8 +64,8 @@ impl<F: FnOnce()> Drop for Defer<F> {
 /// ```
 ///
 /// In Go, the `defer` code runs when the function exits. In this Rust
-/// implementation, the code runs when the surrounding scope ends – this makes
-/// it possible to use `defer` inside loops:
+/// implementation, however, the code runs when the surrounding scope ends –
+/// this makes it possible to use `defer` inside loops:
 ///
 /// ```rust
 /// use defer_lite::defer;

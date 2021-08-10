@@ -1,8 +1,12 @@
 # defer-lite
 
+[![Crates.io](https://img.shields.io/crates/v/defer-lite.svg)](https://crates.io/crates/defer-lite)
+[![Docs.rs](https://docs.rs/defer-lite/badge.svg)](https://docs.rs/defer-lite)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 A Rust implementation of [Go's `defer` statement](https://tour.golang.org/flowcontrol/12) as the `defer!` macro, which executes a block of code when the surrounding scope ends.
 
-This is a high-performance `no_std` implementation, providing only the `defer!` macro.
+This crate focuses on providing a lightweight, high-performance, `no_std` implementation of the `defer!` macro.
 
 ## Usage
 
